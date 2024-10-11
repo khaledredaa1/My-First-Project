@@ -10,7 +10,7 @@ config.vm.define "db01" do |db01|
     db01.vm.network "private_network", ip: '192.168.56.10'
     db01.vm.provider "virtualbox" do |vb|
     db01.vm.provision "shell", path: "mysql_setup.sh"
-      vb.memory = 900
+      vb.memory = 500
     end
   end
 
@@ -22,7 +22,7 @@ config.vm.define "db01" do |db01|
     mc01.vm.network "private_network", ip: "192.168.56.11"
     mc01.vm.provider "virtualbox" do |vb|
     mc01.vm.provision "shell", path: "memcache_setup.sh"
-      vb.memory = 900
+      vb.memory = 500
     end
   end
 
@@ -34,7 +34,7 @@ config.vm.define "db01" do |db01|
     rmq01.vm.network "private_network", ip: "192.168.56.12"
     rmq01.vm.provider "virtualbox" do |vb|
     rmq01.vm.provision "shell", path: "rabbitmq_setup.sh"
-      vb.memory = 900
+      vb.memory = 500
     end
   end
 
@@ -46,7 +46,7 @@ config.vm.define "db01" do |db01|
     app01.vm.network "private_network", ip: "192.168.56.13"
     app01.vm.provider "virtualbox" do |vb|
     app01.vm.provision "shell", path: "tomcat_setup.sh"
-      vb.memory = 3000
+      vb.memory = 2000
     end
   end
 
@@ -57,7 +57,7 @@ config.vm.define "db01" do |db01|
     web01.vm.network "private_network", ip: "192.168.56.14"
     web01.vm.provider "virtualbox" do |vb|
     web01.vm.provision "shell", path: "nginx_setup.sh"
-      vb.memory = 900
+      vb.memory = 1000
     end
   end
 end  
